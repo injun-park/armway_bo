@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'bootstrap_css_include.html' %}
+    {% include 'script_include.html' %}
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 class="logo">Flask App</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-default">
+                <tr>
+                    <th>#index</th>
+                    <th>_id</th>
+                    <th>ClobotID</th>
+                    <th>name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in cursor %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ row["_id"] }}</td>
+                    <td>{{ row["cid"] }}</td>
+                    <td>{{ row["name"] }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

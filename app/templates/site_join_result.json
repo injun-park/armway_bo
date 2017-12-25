@@ -1,0 +1,8 @@
+
+{
+  "success" : "{{ context['success'] }}",
+  "cid" : "{{context['cid']}}",
+  "cname" : "{{ context['cname']}}",
+  "fail-reson" : "{{context['result']}}"
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'bootstrap_css_include.html' %}
+    {% include 'script_include.html' %}
+
+    <script>
+        function mysubmit() {
+            if(document.myform.cid.value == "") {
+                alert("Clobot Id를 입력해 주세요");
+                return;
+            }
+
+            if(document.myform.cname.value == "") {
+                alert("Clobo Name를 입력해 주세요");
+                return;
+            }
+
+            document.myform.action = "http://localhost:5000/site_join";
+            form.submit();
+
+        }
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <!-- Content here -->
+    <br><br><br>
+    <form name="myform" method="post">
+
+        <div class="form-group">
+            <label class="col-form-label" for="formGroupExampleInput">Clobot ID</label>
+            <input type="text" name="cid" class="form-control" id="formGroupExampleInput" placeholder="your id">
+        </div>
+        <div class="form-group">
+            <label class="col-form-label" for="formGroupExampleInput2">Clobot Nickname</label>
+            <input type="text" name="cname" class="form-control" id="formGroupExampleInput2" placeholder="your nickname">
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="javascript:mysubmit()">Submit</button>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>
+
+
